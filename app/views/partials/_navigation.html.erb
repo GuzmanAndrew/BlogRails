@@ -1,0 +1,43 @@
+<header>
+    <nav class="be-red white large-padding">
+        <ul class="no-list row center-xs middle-xs">
+            <li class=”col-md”>
+                <h1 class=”no-margin” id=”logo”><%= link_to "AndTechBlog", root_path %></h1>
+            </li>
+            
+            <li class="col-md">
+                <%= link_to "Articulos", articles_path %>
+            </li>
+
+            <li class="col-md">
+                <%= link_to "Crear articulo", new_path%>
+            </li>
+
+            <% @categories.each do |category| %>
+                <li class="col-md">
+                    <%= link_to category.name, category %>
+                </li>
+            <% end %>
+
+            <li class="col-md">
+                <%= link_to "Contacto", contact_path, style:"color:white2
+                "%>
+            </li>
+
+            <% if user_signed_in? %>
+                <li class="col-md">
+                <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class:"session-conf" %>
+                </li>
+            <% else %>
+                <li class="col-md">
+                    <%= link_to "Iniciar sesión", new_user_session_path, class:"session-conf" %>
+                </li>
+
+                <li class="col-md">
+                    <%= link_to "Crear cuenta", new_user_registration_path, class:"session-conf"  %>
+                </li>
+            <% end %>
+
+        </ul>
+    </nav> 
+</header>

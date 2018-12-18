@@ -1,0 +1,15 @@
+<div class="container" style="margin:0 auto;">
+
+    <h1>Artículos</h1>
+    <div class="row">
+        <%= render @articles %>
+    </div>
+    
+    <div class="top-space text-center">
+        <strong>
+            <%= will_paginate @articles, style:"color:#004d40;", class:"size" %>
+        </strong>
+    </div>
+
+</div>
+
